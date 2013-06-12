@@ -168,7 +168,7 @@ public class MainGrid extends Grid {
 				tt = (TetrominoTile)t.getGrid().getTileAt(i, j);
 				
 				if(tt.isOccupied()) {
-					mgt = (MainGridTile)this.getTileAt(t.getCurrentXPosition() + i + 1, t.getCurrentYPosition() + j);
+					mgt = (MainGridTile)this.getTileAt(t.getCurrentXPosition() + i, t.getCurrentYPosition() + j);
 					
 					mgt.setOccupied(true);
 					mgt.setColor(tt.getColor());

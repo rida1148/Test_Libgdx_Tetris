@@ -3,18 +3,11 @@ package com.me.tetris;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.utils.Array;
 import com.me.tetris.game.GameHandler;
 import com.me.tetris.map.MainGrid;
-import com.me.tetris.tetrominos.O_Tetromino;
 import com.me.tetris.tetrominos.Tetromino;
 
 public class Tetris implements ApplicationListener {

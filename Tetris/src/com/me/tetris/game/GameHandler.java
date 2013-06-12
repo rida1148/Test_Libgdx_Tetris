@@ -1,15 +1,18 @@
 package com.me.tetris.game;
 
 import com.me.tetris.Tetris;
-import com.me.tetris.tetrominos.L_Tetromino;
 import com.me.tetris.tetrominos.Tetromino;
 
 public class GameHandler {
 	
 	private Tetris tetris;
 	
+	private boolean stop;
+	
 	public GameHandler(Tetris tetris) {
 		this.tetris = tetris;
+		
+		this.stop = false;
 		
 		this.createNewTetromino();
 		
@@ -17,16 +20,20 @@ public class GameHandler {
 	    { 
 	      public void run() 
 	      { 
-	    	  while(true) {
+	    	  while(!isStopped()) {
 		          mainLoop();
 		          try {
-		        	  Thread.sleep(1000);
+		        	  Thread.sleep(100);
 		          } catch(Exception e) {
 		        	  
 		          }
 	    	  }
 	      } 
 	    }).start();
+	}
+	
+	public boolean isStopped() {
+		return this.stop;
 	}
 	
 	private void mainLoop() {
@@ -40,6 +47,7 @@ public class GameHandler {
 			//if the tetromino is stopped outside the screen, stop the game
 			if(this.tetris.getMainGrid().isATetrominoTrespassingTheTopOfTheScreen(this.tetris.getTetromino())) {
 				//GAME OVER
+				this.stop = true;
 			} else {
 				//else stop it(put it inside the MainGrid), create a new Tetromino over the screen and start the loop again
 				//Put the Tetromino in the MainGrid
