@@ -7,8 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "Tetris";
-		cfg.width = 800;
-		cfg.height = 480;
+		cfg.width = 400;
+		cfg.height = 800;
 		
 		new LwjglApplication(new Tetris(), cfg);
 	}

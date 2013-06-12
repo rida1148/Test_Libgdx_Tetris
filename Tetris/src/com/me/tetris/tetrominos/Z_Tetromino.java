@@ -1,7 +1,7 @@
 package com.me.tetris.tetrominos;
 
 import com.badlogic.gdx.graphics.Color;
-import com.me.tetris.map.Grid;
+import com.me.tetris.map.TetrominoGrid;
 
 public class Z_Tetromino extends Tetromino {
 	public Z_Tetromino() {
@@ -11,7 +11,7 @@ public class Z_Tetromino extends Tetromino {
 	@Override
 	protected void setInitialGrid() {
 		this.color = Color.RED;
-		this.grid = new Grid(3, 2);
+		this.grid = new TetrominoGrid(3, 2);
 		
 		this.grid.getTileAt(1, 0).setOccupied(true);
 		this.grid.getTileAt(1, 0).setColor(this.color);

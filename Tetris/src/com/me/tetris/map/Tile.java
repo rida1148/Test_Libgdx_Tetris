@@ -3,27 +3,12 @@ package com.me.tetris.map;
 import com.badlogic.gdx.graphics.Color;
 
 public class Tile {
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	
-	private int width;
-	private int height;
+	protected boolean occupied;
 	
-	private boolean occupied;
-	
-	private Color color;
-	
-	public Tile(int x, int y, int width, int height) {
-		this.x = x;
-		this.y =y;
-		
-		this.width = width;
-		this.height = height;
-		
-		this.occupied = false;
-		
-		this.color = Color.WHITE;
-	}
+	protected Color color;
 	
 	public Tile(int x, int y) {
 		this.x = x;
@@ -32,18 +17,6 @@ public class Tile {
 		this.occupied = false;
 		
 		this.color = Color.WHITE;
-	}
-	
-	public Tile(int x, int y, int width, int height, Color color) {
-		this.x = x;
-		this.y =y;
-		
-		this.width = width;
-		this.height = height;
-		
-		this.occupied = true;
-		
-		this.color = color;
 	}
 
 	public int getX() {
@@ -76,15 +49,5 @@ public class Tile {
 
 	public void setColor(Color color) {
 		this.color = color;
-	}
-
-	public int getWidth() {
-		return width;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-	
-	
+	}	
 }
